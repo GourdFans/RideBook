@@ -20,8 +20,8 @@
         <servlet-api.version>3.1.0</servlet-api.version>
         <jstl.version>1.2</jstl.version>
         <validation-version>1.1.0.Final</validation-version>
-        <slf4j.version>1.7.13</slf4j.version>
-        <log4j.version>2.7</log4j.version>
+        <slf4j.version>1.7.22</slf4j.version>
+        <logback.version>1.2.3</logback.version>
         <guava.version>20.0</guava.version>
         <junit.version>4.12</junit.version>
         <truth.version>0.30</truth.version>
@@ -34,4 +34,40 @@
         <fastjson.version>1.2.21</fastjson.version>
         <common-lang3.version>3.5</common-lang3.version>
     </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <build>
+                <filters>
+                    <filter>../local.properties</filter>
+                </filters>
+            </build>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 </project>
