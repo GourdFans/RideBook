@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by zhuozi on 17/5/21.
  */
 @Controller
-@RequestMapping("/status")
+@RequestMapping("")
 public class StatusController {
 
     @ResponseBody
-    @RequestMapping(value = "")
+    @RequestMapping(value = "/status")
     public JSONObject status(){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("code", 1001);
